@@ -253,7 +253,8 @@ th, td {
 <section class='slide'>
   <div>
     <h2>サーバー</h2>
-    <p>※ここに画像を入れる</p>
+    <p style='margin-bottom: 0;'>※修正中</p>
+    <image src='images/server.png'></image>
   </div>
 </section>
 <section class='slide shout'>
@@ -314,6 +315,52 @@ th, td {
     <h2>migration</h2>
     <p>機能追加時に前回からの差分の環境を作る<br />機能追加をスムーズに行うことができる</p>
     <pre><code><mark class="comment">例）テーブルに項目を追加する</mark></code></pre>
+  </div>
+</section>
+<section class='slide shout'>
+  <div>
+    <h2>HTML と Railsの関係</h2>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>HTML と Railsの関係について話してみましょう。</h2>
+    <p>views のどの部分が HTML で、どこが Embedded Ruby (ERB)ですか？どうやってこれらが MVC (モデルとコントローラが、動的に HTML や views を生成するロジックを管理しているもの) と関連づけられていますか？</p>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>HTML と Railsの関係について話してみましょう。</h2>
+    <p>views の<mark>どの部分が HTML で、どこが Embedded Ruby (ERB)</mark>ですか？どうやってこれらが <mark>MVC (モデルとコントローラが、動的に HTML や views を生成するロジックを管理しているもの) と関連づけ</mark>られていますか？</p>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>HTMLとRuby(ERB)の違い</h2>
+    <p style='margin-bottom: 20px;'></p>
+    <pre><code>Ruby(ERB)<br/><mark><% 〜 %></mark> <- 囲まれた箇所がRubyからHTMLに変換される</code></pre>
+    <pre><code><%= @idea.name %> <mark class="comment"># => ステッカー</mark></code>
+    <code><%= f.label :name %> <br /><mark class="comment"> => &ltlabel for="idea_name">Name&lt/label></mark></code>
+    <code><%= f.text_field :name %> <br /><mark class="comment"> => &ltinput id="idea_name" name="idea[name]" type="text" /></mark></code></pre>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>HTMLとRuby(ERB)の違い</h2>
+    <p style='margin-bottom: 20px;'></p>
+    <pre><code>HTML<br/><mark><% 〜 %>以外</mark> <- 囲まれていない箇所についてはそのまま出力される</code></pre>
+    <pre><code>&lth1>Listing ideas&lt/h1><br /> => &lth1>Listing ideas&lt/h1></code></pre>
+  </div>
+</section>
+<section class='slide shout'>
+  <div>
+    <h2>MVCと関連づけ</h2>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>MVCと関連づけ</h2>
+    <p>Model, View, Controller</p>
   </div>
 </section>
 
