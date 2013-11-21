@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>Shower Presentation Engine</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1274, user-scalable=no">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/print.css" media="print">
+  <!--
+    To apply styles to the certain slides
+    set slide ID to get needed elements
+    -->
+  <style>
+    #Cover h2 {
+      margin:65px 0 0;
+      color:#FFF;
+      text-align:center;
+      font-size:70px;
+      }
+    #Picture h2 {
+      color:#FFF;
+      }
+
+.frame {
+  display: inline-block;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+}
+table, tr, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 0 5px;
+}
+  </style>
+</head>
+<body class="list">
+  <header class="caption">
+    <p>RailsGirls</p>
+  </header>
+  <section class='slide'>
+  <div>
+    <h2>ちょこっと説明資料</h2>
+    <img src='images/sticker.jpg' style='margin-left: 200px;'>
+  </div>
+</section>
+<section class='slide shout'>
+  <div>
+    <h2>それぞれのコマンドが何なのか説明してみましょう</h2>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>コマンド説明</h2>
+    <pre><code>mkdir projects</code>
+    <code>cd projects</code>
+    <code>rails new railsgirls</code>
+    <code>cd railsgirls</code>
+    <code>rails server</code></pre>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>コマンド説明</h2>
+    <pre><code><mark>mkdir projects</mark> 創作物を入れるフォルダを作る</code>
+    <code>cd projects</code>
+    <code>rails new railsgirls</code>
+    <code>cd railsgirls</code>
+    <code>rails server</code></pre>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>コマンド説明</h2>
+    <pre><code>mkdir projects <mark class="comment">創作物を入れるフォルダを作る</mark></code>
+    <code><mark>cd projects</mark> 作ったフォルダに移動する</code>
+    <code>rails new railsgirls</code>
+    <code>cd railsgirls</code>
+    <code>rails server</code></pre>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>コマンド説明</h2>
+    <pre><code>mkdir projects <mark class="comment">創作物を入れるフォルダを作る</mark></code>
+    <code>cd projects <mark class="comment">作ったフォルダに移動する</mark></code>
+    <code><mark>rails new railsgirls</mark> 最低限必要なフォルダやファイルを作成</code>
+    <code>cd railsgirls</code>
+    <code>rails server</code></pre>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>コマンド説明</h2>
+    <pre><code>mkdir projects <mark class="comment">創作物を入れるフォルダを作る</mark></code>
+    <code>cd projects <mark class="comment">作ったフォルダに移動する</mark></code>
+    <code>rails new railsgirls <mark class="comment">最低限必要なフォルダやファイルを作成</mark></code>
+    <code><mark>cd railsgirls</mark> 自動で作られたフォルダに移動する</code>
+    <code>rails server</code></pre>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>コマンド説明</h2>
+    <pre><code>mkdir projects <mark class="comment">創作物を入れるフォルダを作る</mark></code>
+    <code>cd projects <mark class="comment">作ったフォルダに移動する</mark></code>
+    <code>rails new railsgirls <mark class="comment">最低限必要なフォルダやファイルを作成</mark></code>
+    <code>cd railsgirls <mark class="comment">自動で作られたフォルダに移動する</mark></code>
+    <code><mark>rails server</mark> ローカルでサーバーを起動</code></pre>
+  </div>
+</section>
+<section class='slide shout'>
+  <div>
+    <h2>ブラウザ接続<br /><mark>localhost:3000</mark></h2>
+  </div>
+</section>
+<section class='slide shout'>
+  <div>
+    <h2>これで最初の準備は終わりです</h2>
+  </div>
+</section>
+<section class='slide shout'>
+  <div>
+    <h2>何が生成されましたか？</h2>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>フォルダ構成　※抜粋</h2>
+    <ul>
+      <li>
+        railsgirls
+        <ul>
+          <li>
+            app
+            <ul>
+              <li>models</li>
+              <li>views</li>
+              <li>controllers</li>
+            </ul>
+          </li>
+          <li>config</li>
+          <li>db</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>フォルダ構成　※抜粋</h2>
+    <ul>
+      <li>
+        railsgirls
+        <ul>
+          <li>
+            <mark>app</mark> 修正する対象プログラム
+            <ul>
+              <li>models</li>
+              <li>views</li>
+              <li>controllers</li>
+            </ul>
+          </li>
+          <li>config</li>
+          <li>db</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>フォルダ構成　※抜粋</h2>
+    <ul>
+      <li>
+        railsgirls
+        <ul>
+          <li>
+            app
+            <ul>
+              <li><mark>models</mark> データを作成（料理人）</li>
+              <li><mark>views</mark> データを視覚化（ウェイター）</li>
+              <li><mark>controllers</mark> データの作成と視覚化を指揮（料理長）</li>
+            </ul>
+          </li>
+          <li>config</li>
+          <li>db</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>フォルダ構成　※抜粋</h2>
+    <ul>
+      <li>
+        railsgirls
+        <ul>
+          <li>
+            app
+            <ul>
+              <li>models</li>
+              <li>views</li>
+              <li>controllers</li>
+            </ul>
+          </li>
+          <li><mark>config</mark> アプリケーションの設定</li>
+          <li>db</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>フォルダ構成　※抜粋</h2>
+    <ul>
+      <li>
+        railsgirls
+        <ul>
+          <li>
+            app
+            <ul>
+              <li>models</li>
+              <li>views</li>
+              <li>controllers</li>
+            </ul>
+          </li>
+          <li>config</li>
+          <li><mark>db</mark> データベースの定義情報</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class='slide shout'>
+  <div>
+    <h2>そしてサーバーは何をしますか？</h2>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>サーバー</h2>
+    <p>何かしらのリクエスト（注文）に対してレスポンス（結果）を返す</p>
+    <p style='margin-bottom:0'>（サーバ例）</p>
+    <ul>
+      <li>データベースサーバー</li>
+      <li>ウェブサーバー</li>
+      <li>アプリケーションサーバー</li>
+    </ul>
+  </div>
+</section>
+<section class='slide'>
+  <div>
+    <h2>サーバー</h2>
+  </div>
+</section>
+
+  <!--
+    To hide progress bar from entire presentation
+    just remove “progress” element.
+    -->
+  <div class="progress"><div></div></div>
+  <script src="shower/shower.js"></script>
+  <!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+  <!-- Photos by John Carey — fiftyfootshadows.net -->
+</body>
+</html>
