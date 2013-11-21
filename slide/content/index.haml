@@ -162,7 +162,95 @@ title: RailsGirls
 %section.slide
   %div
     %h2 サーバー
-    %p ※ここに画像を入れる
+    %p{style: 'margin-bottom: 0;'} ※修正中
+    %image{src: 'images/server.png'}
+%section.slide.shout
+  %div
+    %h2 scaffold とはなんでしょう？
 %section.slide
   %div
-    %h2 
+    %h2 scaffoldコマンド
+    %pre
+      %code rails generate scaffold idea <br/> name:string description:text picture:string
+%section.slide
+  %div
+    %h2 scaffoldコマンド
+    %pre
+      %code <mark class="important">rails generate</mark> scaffold idea <br/> name:string description:text picture:string
+    %pre
+      %code <mark>railsのひな形を作成するコマンド</mark>
+%section.slide
+  %div
+    %h2 scaffoldコマンド
+    %pre
+      %code rails generate <mark class="important">scaffold</mark> idea <br/> name:string description:text picture:string
+    %pre
+      %code
+        <mark>アプリケーションの機能の土台を一式作成</mark>
+        <mark class="comment">他の例）
+        model : モデル＆マイグレーションの土台作成
+        controller : コントローラ＆ビューの土台作成</mark>
+%section.slide
+  %div
+    %h2 scaffoldコマンド
+    %pre
+      %code rails generate scaffold <mark class="important">idea</mark> <br/> name:string description:text picture:string
+    %pre
+      %code
+        <mark>機能の名前</mark>
+        <mark class="comment">例のコマンドではアイデア（idea）を管理する機能を想定</mark>
+%section.slide.shout
+  %div
+    %img{src: 'images/display.png', style: 'position: fixed;left: 20px;top: 20px;'}
+%section.slide
+  %div
+    %h2 scaffoldコマンド
+    %pre
+      %code rails generate scaffold idea <br/> <mark class="important">name:string description:text picture:string</mark>
+    %pre
+      %code <mark>機能で使用する項目</mark>
+%section.slide.shout
+  %div
+    %h2 migration 機能が何で、なぜ必要なのか。
+%section.slide
+  %div
+    %h2 migration
+    %p 機能追加時に前回からの差分の環境を作る<br />機能追加をスムーズに行うことができる
+    %pre
+      %code <mark class="comment">例）テーブルに項目を追加する</mark>
+%section.slide.shout
+  %div
+    %h2 HTML と Railsの関係
+%section.slide
+  %div
+    %h2 HTML と Railsの関係について話してみましょう。
+    %p views のどの部分が HTML で、どこが Embedded Ruby (ERB)ですか？どうやってこれらが MVC (モデルとコントローラが、動的に HTML や views を生成するロジックを管理しているもの) と関連づけられていますか？
+%section.slide
+  %div
+    %h2 HTML と Railsの関係について話してみましょう。
+    %p views の<mark>どの部分が HTML で、どこが Embedded Ruby (ERB)</mark>ですか？どうやってこれらが <mark>MVC (モデルとコントローラが、動的に HTML や views を生成するロジックを管理しているもの) と関連づけ</mark>られていますか？
+%section.slide
+  %div
+    %h2 HTMLとRuby(ERB)の違い
+    %p{style: 'margin-bottom: 20px;'}
+    %pre
+      %code Ruby(ERB)<br/><mark><% 〜 %></mark> <- 囲まれた箇所がRubyからHTMLに変換される
+    %pre
+      %code <%= @idea.name %> <mark class="comment"># => ステッカー</mark>
+      %code <%= f.label :name %> <br /><mark class="comment"> => &ltlabel for="idea_name">Name&lt/label></mark>
+      %code <%= f.text_field :name %> <br /><mark class="comment"> => &ltinput id="idea_name" name="idea[name]" type="text" /></mark>
+%section.slide
+  %div
+    %h2 HTMLとRuby(ERB)の違い
+    %p{style: 'margin-bottom: 20px;'}
+    %pre
+      %code HTML<br/><mark><% 〜 %>以外</mark> <- 囲まれていない箇所についてはそのまま出力される
+    %pre
+      %code &lth1>Listing ideas&lt/h1><br /> => &lth1>Listing ideas&lt/h1>
+%section.slide.shout
+  %div
+    %h2 MVCと関連づけ
+%section.slide
+  %div
+    %h2 MVCと関連づけ
+    %p Model, View, Controller
