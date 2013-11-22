@@ -234,23 +234,153 @@ title: RailsGirls
     %h2 HTMLとRuby(ERB)の違い
     %p{style: 'margin-bottom: 20px;'}
     %pre
-      %code Ruby(ERB)<br/><mark><% 〜 %></mark> <- 囲まれた箇所がRubyからHTMLに変換される
+      %code HTML ※Webブラウザにいろいろ表示するための言語<br/><mark><% 〜 %>以外</mark> <- 囲まれていない箇所についてはそのまま出力される
     %pre
-      %code <%= @idea.name %> <mark class="comment"># => ステッカー</mark>
-      %code <%= f.label :name %> <br /><mark class="comment"> => &ltlabel for="idea_name">Name&lt/label></mark>
-      %code <%= f.text_field :name %> <br /><mark class="comment"> => &ltinput id="idea_name" name="idea[name]" type="text" /></mark>
+      %code &ltstrong>Name:&lt/strong><br /> <mark class="comment">=></mark> <strong>Name:</strong>
 %section.slide
   %div
     %h2 HTMLとRuby(ERB)の違い
     %p{style: 'margin-bottom: 20px;'}
     %pre
-      %code HTML<br/><mark><% 〜 %>以外</mark> <- 囲まれていない箇所についてはそのまま出力される
+      %code Ruby(ERB) ※RubyでHTMLを作るもの<br/><mark><% 〜 %></mark> <- 囲まれた箇所がRubyからHTMLに変換される
     %pre
-      %code &lth1>Listing ideas&lt/h1><br /> => &lth1>Listing ideas&lt/h1>
+      %code <%= @idea.name %> <mark class="comment"> => ステッカー</mark>
+      %code <%= f.label :name %> <br /><mark class="comment"> => &ltlabel for="idea_name">Name&lt/label></mark>
+      %code <%= f.text_field :name %> <br /><mark class="comment"> => &ltinput id="idea_name" name="idea[name]" type="text" /></mark>
 %section.slide.shout
   %div
     %h2 MVCと関連づけ
 %section.slide
   %div
     %h2 MVCと関連づけ
-    %p Model, View, Controller
+    %div{style: 'float: left;margin-right: 100px;'}
+      %p{style: 'margin-bottom: 0;'} C（コントローラ）
+      %pre{style: 'margin: 0;'}
+        %code def new
+        %code 　<mark class="important">@idea</mark> = <mark>Idea</mark>.new
+        %code end
+    %div{style: 'float: left;'}
+      %p{style: 'margin-bottom: 0;'} V（ビュー）
+      %pre{style: 'margin: 0;'}
+        %code <%= <mark class="important">@idea</mark>.name %>
+    %div{style: 'clear: both;padding-top: 20px;'}
+      %p{style: 'margin-bottom: 0;'} M（モデル）
+      %pre
+        %code class <mark>Idea</mark> < ActiveRecord::Base
+        %code end
+%section.slide
+  %div
+    %h2 CSSとレイアウトについて
+    %p CSS（Cascading Style Sheets）はHTMLをどのように表示するかを指示
+%section.slide
+  %div
+    %h2 CSSとレイアウトについて
+    %pre
+      %code body { padding-top: 100px; }
+      %code footer { margin-top: 100px; }
+      %code table, td, th { vertical-align: middle !important;<br /> border: none !important; }
+      %code th { border-bottom: 1px solid #DDD !important; }
+%section.slide
+  %div
+    %h2 CSSとレイアウトについて
+    %pre
+      %code <mark>body { padding-top: 100px; }</mark> <mark class="comment">=> body要素の内側の上に余白</mark>
+      %code footer { margin-top: 100px; }
+      %code table, td, th { vertical-align: middle !important;<br /> border: none !important; }
+      %code th { border-bottom: 1px solid #DDD !important; }
+%section.slide
+  %div
+    %h2 CSSとレイアウトについて
+    %pre
+      %code body { padding-top: 100px; }
+      %code <mark>footer { margin-top: 100px; }</mark> <mark class="comment">=> footer要素の外側の上に余白</mark>
+      %code table, td, th { vertical-align: middle !important;<br /> border: none !important; }
+      %code th { border-bottom: 1px solid #DDD !important; }
+%section.slide
+  %div
+    %h2 CSSとレイアウトについて
+    %pre
+      %code body { padding-top: 100px; }
+      %code footer { margin-top: 100px; }
+      %code <mark>table, td, th { vertical-align: middle !important;<br /> border: none !important; }</mark> <mark class="comment">=> 縦揃えで線をなくす</mark>
+      %code th { border-bottom: 1px solid #DDD !important; }
+%section.slide
+  %div
+    %h2 CSSとレイアウトについて
+    %pre
+      %code body { padding-top: 100px; }
+      %code footer { margin-top: 100px; }
+      %code table, td, th { vertical-align: middle !important;<br /> border: none !important; }
+      %code <mark>th { border-bottom: 1px solid #DDD !important; }</mark><br /> <mark class="comment">=> tableのヘッダーのみ下線を引く</mark>
+%section.slide
+  %div
+    %h2 何のライブラリがあって、なぜ便利なのかを説明してください
+    %p{style: 'margin-bottom: 0;'} ライブラリ主要参考サイト
+    %pre
+      %code http://rubygems.org/
+      %code https://github.com/
+      %code https://www.ruby-toolbox.com/
+%section.slide
+  %div
+    %h2 何のライブラリがあって、なぜ便利なのかを説明してください
+    %p{style: 'margin-bottom: 0;'} ライブラリ主要参考サイト
+    %pre
+      %code <mark>http://rubygems.org/</mark>
+      %code https://github.com/
+      %code https://www.ruby-toolbox.com/
+%section.slide
+  %div
+    %h2 Gemfile
+    %pre
+      %code source 'https://rubygems.org'
+      %code gem 'carrierwave'
+%section.slide
+  %div
+    %h2 routes
+    %p routes について話してください。
+%section.slide.shout
+  %div
+    %h2 HTTP
+%section.slide
+  %div
+    %h2 HTTP
+    %pre
+      %code 「何を」「どうしたいか」
+%section.slide
+  %div
+    %h2 HTTP
+    %pre
+      %code <mark>「何を」</mark>「どうしたいか」
+    %p アドレス<br />http://localhost:3000/ideas
+%section.slide
+  %div
+    %h2 HTTP
+    %pre
+      %code 「何を」<mark>「どうしたいか」</mark>
+    %pre
+      %code GET <mark class="comment">=> 〜をください</mark>
+      %code PUT/PATCH <mark class="comment">=> 〜を更新（置き換え）してください</mark>
+      %code DELETE <mark class="comment">=> 〜を削除してください</mark>
+      %code POST <mark class="comment">=> 〜をやってください</mark>
+%section.slide
+  %div
+    %h2 routesの書き方
+    %p 「config/routes.rb」を修正
+    %pre{style: 'margin: 0;'}
+      %code 「ideasの一覧をください」 => get 'ideas'
+      %code 「ideasのidをください」 => get 'ideas/:id'
+      %code 「ideasを新しく作ってください」 => post 'ideas'
+      %code 「ideasのidを更新してください」 => put 'ideas/:id'
+      %code 「ideasのidを削除してください」 => delete 'ideas/:id'
+%section.slide
+  %div
+    %h2 routesの書き方
+    %p{style: 'margin: 0;'} resources :ideas
+    %pre
+      %code 「ideasの一覧をください」 => get 'ideas'
+      %code 「ideasのidをください」 => get 'ideas/:id'
+      %code 「ideasを新しく作ってください」 => post 'ideas'
+      %code 「ideasのidを更新してください」 => put 'ideas/:id'
+      %code 「ideasのidを削除してください」 => delete 'ideas/:id'
+      %code 「ideasの新規登録画面をください」 => get 'ideas/new'
+      %code 「ideasのidの更新画面をください」 => get 'ideas/:id/edit'
